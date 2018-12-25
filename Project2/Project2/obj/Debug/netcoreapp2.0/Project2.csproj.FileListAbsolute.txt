@@ -1,0 +1,11 @@
+D:\Data\SourceTree\Train\Project2\Project2\bin\Debug\netcoreapp2.0\Project2.deps.json
+D:\Data\SourceTree\Train\Project2\Project2\bin\Debug\netcoreapp2.0\Project2.runtimeconfig.json
+D:\Data\SourceTree\Train\Project2\Project2\bin\Debug\netcoreapp2.0\Project2.runtimeconfig.dev.json
+D:\Data\SourceTree\Train\Project2\Project2\bin\Debug\netcoreapp2.0\Project2.dll
+D:\Data\SourceTree\Train\Project2\Project2\bin\Debug\netcoreapp2.0\Project2.pdb
+D:\Data\SourceTree\Train\Project2\Project2\obj\Debug\netcoreapp2.0\Project2.csprojAssemblyReference.cache
+D:\Data\SourceTree\Train\Project2\Project2\obj\Debug\netcoreapp2.0\Project2.csproj.CoreCompileInputs.cache
+D:\Data\SourceTree\Train\Project2\Project2\obj\Debug\netcoreapp2.0\Project2.AssemblyInfoInputs.cache
+D:\Data\SourceTree\Train\Project2\Project2\obj\Debug\netcoreapp2.0\Project2.AssemblyInfo.cs
+D:\Data\SourceTree\Train\Project2\Project2\obj\Debug\netcoreapp2.0\Project2.dll
+D:\Data\SourceTree\Train\Project2\Project2\obj\Debug\netcoreapp2.0\Project2.pdb
