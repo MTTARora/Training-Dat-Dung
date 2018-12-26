@@ -1,28 +1,31 @@
 ﻿using System;
+using System.Text;
 
-namespace Project2
+namespace Project21
 {
     class DienTichHinhChuNhatApplication
     {
         class Dientich
         {
-            float dai;
-            float rong;
+            public double dai;
+            public double rong ;
 
             public void Nhap()
             {
-                Console.WriteLine("Nhap chieu dai:  " + Console.ReadLine(),dai);
-                Console.WriteLine("Nhap chieu rong:  " + Console.ReadLine(),rong);
+                Console.WriteLine("Moi nhap chieu dai: ");
+                dai = Convert.ToDouble(Console.ReadLine());
+                Console.WriteLine("Moi nhap chieu rong: ");
+                rong = Convert.ToDouble(Console.ReadLine());
             }
             public double Ketqua()
             {
                 return dai * rong;
             }
-            public void In()
+            public void Print()
             {
-                Console.WriteLine("Dai: {0}", dai);
-                Console.WriteLine("Rong: {0}", rong);
-                Console.WriteLine("Dien tich hinh chu nhat: {0}", Ketqua());
+                Console.WriteLine("Chieu dai da nhap la: {0}", dai);
+                Console.WriteLine("Chieu rong da nhap la: {0}", rong);
+                Console.WriteLine("Dien tich hinh chu nhat la: {0}", Ketqua());
             }
         }
         class HienthiraDisplay
@@ -31,8 +34,7 @@ namespace Project2
             {
                 Dientich d = new Dientich();
                 d.Nhap();
-                d.Ketqua();
-                d.In();
+                d.Print();
                 Console.ReadKey();
             }
         }
