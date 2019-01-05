@@ -11,7 +11,7 @@ namespace Nullable
             double num3;
             num3 = num1 ?? 452433123123134;
             Console.WriteLine("Gia tri cua num 3: {0}",num3);
-            num3 = num2 ?? 32;
+            num3 = num2 ?? 452433123123134;
             Console.WriteLine("Gia tri cua num3: {0}", num3);
             Console.ReadKey();
         }

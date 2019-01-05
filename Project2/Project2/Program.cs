@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Text;
 
 namespace Project21
 {
@@ -7,8 +6,8 @@ namespace Project21
     {
         class Dientich
         {
-            public double dai;
-            public double rong ;
+             double dai = new double();
+             double rong = new double();
 
             public void Nhap()
             {
@@ -34,6 +33,7 @@ namespace Project21
             {
                 Dientich d = new Dientich();
                 d.Nhap();
+                d.Ketqua();
                 d.Print();
                 Console.ReadKey();
             }

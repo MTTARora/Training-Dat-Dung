@@ -2,7 +2,7 @@
 
 namespace Project3
 {
-    class Program
+    class Datatypes
     {
         static void Main(string[] args)
         {

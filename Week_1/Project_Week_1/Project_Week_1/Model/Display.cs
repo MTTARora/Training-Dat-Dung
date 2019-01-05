@@ -7,22 +7,22 @@ namespace Project_Week_1.Model
     class Display : UserModel
     {        
         
-        public void disPlaySign()
+        public void signUpScreen(UserModel user)
         {
-            Console.Write("Ho Ten: {0}",userName);
-            userName = Convert.ToString(Console.ReadLine());
-            Console.Write("Email: {0}", userEmail);
-            userEmail = Convert.ToString(Console.ReadLine());
-            Console.Write("Mat Khau: {0}", userPassword);
-            userPassword = Convert.ToString(Console.ReadLine());
+            Console.Write("Ho Ten: {0}",user.userName);
+            user.userName = Convert.ToString(Console.ReadLine());
+            Console.Write("Email: ");
+            user.userEmail = Convert.ToString(Console.ReadLine());
+            Console.Write("Mat Khau: ");
+            user.userPassword = Convert.ToString(Console.ReadLine());
         }
 
-        public void disPlayLog()
+        public void signInScreen(UserModel user)
         {
-            Console.Write("Email: {0}", userEmail);
-            userEmail = Convert.ToString(Console.ReadLine());
-            Console.Write("Mat Khau: {0}", userPassword);
-            userPassword = Convert.ToString(Console.ReadLine());
+            Console.Write("Email: ");
+            user.userEmail = Convert.ToString(Console.ReadLine());
+            Console.Write("Mat Khau: ");
+            user.userPassword = Convert.ToString(Console.ReadLine());
         }
     }
 }

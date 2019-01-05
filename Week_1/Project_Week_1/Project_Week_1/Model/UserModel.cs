@@ -21,44 +21,39 @@ namespace Project_Week_1.Model
             else
                 return true;
         }
-        public void DB()
-        {
-            FileStream f = new FileStream("D:\\Data\\SourceTree\\Train\\Week_1\\Project_Week_1\\Project_Week_1\\DB\\DB.txt", FileMode.Append,FileAccess.ReadWrite);
-        }
         //Check điều kiện và đăng kí 
-        public void Sign()
+        public void register()
         {
-            string[] user = System.IO.File.ReadAllLines("D:\\Data\\SourceTree\\Train\\Week_1\\Project_Week_1\\Project_Week_1\\DB\\DB.txt");
-            if (checkUsers(userEmail, user) == true)
+            string[] users = System.IO.File.ReadAllLines("D:\\Data\\SourceTree\\Train\\Week_1\\Project_Week_1\\Project_Week_1\\DB\\DB.txt");
+            if (checkUsers(userEmail, users) == true)
             {
-                Console.WriteLine("Tao thanh cong");
-                //StreamWriter sw = new StreamWriter("D:\\Data\\SourceTree\\Train\\Week_1\\Project_Week_1\\Project_Week_1\\DB\\DB.txt", true,Encoding.UTF8);
-                //sw.WriteLine();
-                //sw.Close();
-                using (StreamWriter sw = new StreamWriter("D:\\Data\\SourceTree\\Train\\Week_1\\Project_Week_1\\Project_Week_1\\DB\\DB.txt", true, Encoding.UTF8))
+                using (StreamWriter sw = new StreamWriter("D:\\Data\\SourceTree\\Train\\Week_1\\Project_Week_1\\Project_Week_1\\DB\\DB.txt", true)) // chưa hiểu
                 {
-                    userName = Convert.ToString(Console.ReadLine());
-                    sw.Write(userName);
+                    //userEmail = Convert.ToString(Console.ReadLine()+ Environment.NewLine);
+                    sw.Write(userEmail);
+                    Console.Write("Tao Thanh Cong");
                 }
             }
-         
             else
             {
                 Console.WriteLine("Tai khoan da ton tai");
-                Console.ReadLine();
             }
+
+            Console.ReadLine();
         }
-        /*public void logIn()
+        public void logIn()
         {
-            string user = null;
-            if (checkUsers(userEmail, user) == false)
+            string[] users = System.IO.File.ReadAllLines("D:\\Data\\SourceTree\\Train\\Week_1\\Project_Week_1\\Project_Week_1\\DB\\DB.txt");
+            if (checkUsers(userEmail, users) == false)
             {
-                Console.Write("Email: {0}", userEmail);
-                userEmail = Convert.ToString(Console.ReadLine());
-                Console.Write("Mat Khau: {0}", userPassword);
-                userPassword = Convert.ToString(Console.ReadLine());
+                Console.Write("Dang Nhap Thanh Cong");
             }
-        }*/
+            else
+            {
+                Console.Write("Dang Nhap Khong Thanh Cong. Vui Long Kiem Tra Lai Email Va Mat Khau Hoac Dang Ki Tai Khoan");
+            }
+            Console.ReadLine();
+        }
 
         private void setName(string n)
         {
