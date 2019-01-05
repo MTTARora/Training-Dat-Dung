@@ -23,6 +23,16 @@ namespace Project_Week_1.Helpers
         {
             return null;
         }
+        // Get data 
+        public void getData(Model.UserModel user)
+        {
+            string[] users = System.IO.File.ReadAllLines("D:\\Data\\SourceTree\\Train\\Week_1\\Project_Week_1\\Project_Week_1\\DB\\DB.txt");
+            foreach(var currentUser in users)
+            {
+
+            }
+
+        }
 
 
     }

@@ -11,15 +11,26 @@ namespace Project_Week_1.Model
         public string userName;
         public string userEmail;
         public string userPassword;
+        public int userPayment = 0;
 
         //Kiem tra user da ton tai hay chua ?
         public bool checkUsers(string userEmail, string [] users)
         {
-            var user = users.FirstOrDefault(x => x == userEmail);
+            var user = users.FirstOrDefault(x => x.Split("-")[1] == userEmail);
             if (user != null)
                 return false;
             else
                 return true;
+        }
+        // Kiểm tra password
+        public bool checkPass(string userPassword, string[] pass)
+        {
+            var password = pass.FirstOrDefault(x => x.Split("-")[1] == userPassword && x.Split("-")[0] == userEmail);
+            if(password != null)
+                return false;
+            else
+                return true;
+            
         }
         //Check điều kiện và đăng kí 
         public bool register()
@@ -29,10 +40,10 @@ namespace Project_Week_1.Model
             {
                 using (StreamWriter sw = new StreamWriter("D:\\Data\\SourceTree\\Train\\Week_1\\Project_Week_1\\Project_Week_1\\DB\\DB.txt", true)) // chưa hiểu
                 {
-                    //userEmail = Convert.ToString(Console.ReadLine()+ Environment.NewLine);
-                    sw.WriteLine(userName);
-                    sw.WriteLine(userEmail);
-                    sw.WriteLine(userPassword);
+                    sw.WriteLine(userEmail + "-" + userName);
+                    sw.WriteLine(userEmail + "-"+  userEmail);
+                    sw.WriteLine(userEmail + "-"+  userPassword);
+                    sw.WriteLine(userEmail + "-" + "So Tien Da Thanh Toan =" + userPayment);
                     Console.Write("Tao Thanh Cong\n");
                     return true;
                 }
@@ -45,10 +56,31 @@ namespace Project_Week_1.Model
         }
         public bool logIn()
         {
-            string[] users = System.IO.File.ReadAllLines("D:\\Data\\SourceTree\\Train\\Week_1\\Project_Week_1\\Project_Week_1\\DB\\DB.txt");
-            if (checkUsers(userEmail, users) == false)
+            string[] infor = System.IO.File.ReadAllLines("D:\\Data\\SourceTree\\Train\\Week_1\\Project_Week_1\\Project_Week_1\\DB\\DB.txt");
+            if (checkUsers(userEmail, infor) == false && checkPass(userPassword, infor) == false)
             {
+                int numData = 0; // Cho biết vị trí của data hiện tại 
                 Console.Write("Dang Nhap Thanh Cong\n");
+                foreach (string currenLine in infor)
+                {
+                    if (currenLine.Contains(userEmail) )
+                    {
+                        //numData++;
+
+                        if (numData == 0)
+                        {
+                            userName = currenLine.Split("-")[1];
+                        }
+                       
+                        if (numData == 3)
+                        {
+                            userPayment = int.Parse(currenLine.Split("=")[1]);
+
+                        }
+                        numData++;
+                    }
+                }
+
                 return true;
             }
             else

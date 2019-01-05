@@ -42,7 +42,7 @@ namespace Project_Week_1
                     {
                         goto lap;
                     }
-                    
+
                     break;
                 default: { Console.WriteLine("Ban da nhap sai vui long nhap lai\n"); goto lap; }
             }
