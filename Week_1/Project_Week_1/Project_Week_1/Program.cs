@@ -11,24 +11,42 @@ namespace Project_Week_1
         {
             UserModel user = new Model.UserModel();
             Model.Display display = new Model.Display();
+            Model.Infomation info = new Model.Infomation();
+            string[] users = System.IO.File.ReadAllLines("D:\\Data\\SourceTree\\Train\\Week_1\\Project_Week_1\\Project_Week_1\\DB\\DB.txt");
+            /*display.signUpScreen(user);
+            user.register();
+            display.signInScreen(user);
+            user.logIn();
+            display.inFormation(user);*/
             lap:
-            Console.WriteLine("Chon chuc nang ban muon: \n1.Dang Ki\n2.Dang Nhap");
+            Console.Write("Chon chuc nang ban muon:\n1.Dang Ki\n2.Dang Nhap\nChuc Nang Ban Chon La: ");
             string chon = Console.ReadLine();
-            switch (chon)
+            switch(chon)
             {
                 case "1":
+                    Console.WriteLine("\nDang Ki: ");
                     display.signUpScreen(user);
-                    user.register();
-                    if (user.checkUsers(user.userEmail, users) == false)
-                        goto case "2";
+                    if (user.register() == true)
+                    {
+                        goto lap;
+                    }
                     break;
                 case "2":
+                    Console.WriteLine("\nDang Nhap:");
                     display.signInScreen(user);
-                    user.logIn();
+                    if (user.logIn())
+                    {
+                        info.infoMation(user);
+                    }
+                    else
+                    {
+                        goto lap;
+                    }
+                    
                     break;
-                default:{ Console.Write("Ban da nhap sai vui long nhap lai \n"); goto lap; }
+                default: { Console.WriteLine("Ban da nhap sai vui long nhap lai\n"); goto lap; }
             }
-           // Console.ReadLine();
+
             Console.ReadKey();
 
         }

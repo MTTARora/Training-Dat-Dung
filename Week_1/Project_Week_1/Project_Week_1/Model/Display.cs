@@ -9,7 +9,7 @@ namespace Project_Week_1.Model
         
         public void signUpScreen(UserModel user)
         {
-            Console.Write("Ho Ten: {0}",user.userName);
+            Console.Write("Ho Ten: ");
             user.userName = Convert.ToString(Console.ReadLine());
             Console.Write("Email: ");
             user.userEmail = Convert.ToString(Console.ReadLine());
@@ -24,5 +24,7 @@ namespace Project_Week_1.Model
             Console.Write("Mat Khau: ");
             user.userPassword = Convert.ToString(Console.ReadLine());
         }
+
+       
     }
 }

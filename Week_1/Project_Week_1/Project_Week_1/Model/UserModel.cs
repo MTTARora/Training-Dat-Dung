@@ -22,7 +22,7 @@ namespace Project_Week_1.Model
                 return true;
         }
         //Check điều kiện và đăng kí 
-        public void register()
+        public bool register()
         {
             string[] users = System.IO.File.ReadAllLines("D:\\Data\\SourceTree\\Train\\Week_1\\Project_Week_1\\Project_Week_1\\DB\\DB.txt");
             if (checkUsers(userEmail, users) == true)
@@ -30,32 +30,35 @@ namespace Project_Week_1.Model
                 using (StreamWriter sw = new StreamWriter("D:\\Data\\SourceTree\\Train\\Week_1\\Project_Week_1\\Project_Week_1\\DB\\DB.txt", true)) // chưa hiểu
                 {
                     //userEmail = Convert.ToString(Console.ReadLine()+ Environment.NewLine);
-                    sw.Write(userEmail);
-                    Console.Write("Tao Thanh Cong");
+                    sw.WriteLine(userName);
+                    sw.WriteLine(userEmail);
+                    sw.WriteLine(userPassword);
+                    Console.Write("Tao Thanh Cong\n");
+                    return true;
                 }
             }
             else
             {
                 Console.WriteLine("Tai khoan da ton tai");
+                return false;
             }
-
-            Console.ReadLine();
         }
-        public void logIn()
+        public bool logIn()
         {
             string[] users = System.IO.File.ReadAllLines("D:\\Data\\SourceTree\\Train\\Week_1\\Project_Week_1\\Project_Week_1\\DB\\DB.txt");
             if (checkUsers(userEmail, users) == false)
             {
-                Console.Write("Dang Nhap Thanh Cong");
+                Console.Write("Dang Nhap Thanh Cong\n");
+                return true;
             }
             else
             {
-                Console.Write("Dang Nhap Khong Thanh Cong. Vui Long Kiem Tra Lai Email Va Mat Khau Hoac Dang Ki Tai Khoan");
+                Console.Write("Dang Nhap Khong Thanh Cong. Vui Long Kiem Tra Lai Email Va Mat Khau Hoac Dang Ki Tai Khoan\n");
+                return false;
             }
-            Console.ReadLine();
         }
-
-        private void setName(string n)
+        
+        /*private void setName(string n)
         {
             userName = n;
         }
@@ -66,9 +69,6 @@ namespace Project_Week_1.Model
         private void setPass(string p)
         {
             userPassword = p;
-        }
-
-        
-
+        }*/
     }
 }
