@@ -10,7 +10,7 @@ namespace ProjectWeekly.Helper
     {
         public void DB()
         {
-            FileStream f = new FileStream("F:\\New folder\\New folder\\d.txt",FileMode.Append, FileAccess.ReadWrite);
+            FileStream f = new FileStream("E:\\Data\\Projects\\Training\\Training-Dat-Dung\\New folder\\d.txt", FileMode.Append, FileAccess.ReadWrite);
         }
         public void insertUser(UserModel user)
         {
