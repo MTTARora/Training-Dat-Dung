@@ -12,6 +12,8 @@ namespace Project_Week_1
             UserModel user = new Model.UserModel();
             Model.Display display = new Model.Display();
             Model.Infomation info = new Model.Infomation();
+            GameList Game = new GameList();
+            gameInformation gameInfor = new gameInformation();
             string[] users = System.IO.File.ReadAllLines("D:\\Data\\SourceTree\\Train\\Week_1\\Project_Week_1\\Project_Week_1\\DB\\DB.txt");
             /*display.signUpScreen(user);
             user.register();
@@ -36,7 +38,7 @@ namespace Project_Week_1
                     display.signInScreen(user);
                     if (user.logIn())
                     {
-                        info.infoMation(user);
+                        info.infoMation(user,display,Game,gameInfor);
                     }
                     else
                     {
