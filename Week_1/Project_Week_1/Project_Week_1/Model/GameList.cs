@@ -20,11 +20,10 @@ namespace Project_Week_1.Model
                 case "1":
                     string[] inforGame = System.IO.File.ReadAllLines("D:\\Data\\SourceTree\\Train\\Week_1\\Project_Week_1\\Project_Week_1\\DB\\GameList.txt");
                     int numGame = 0;
-                    string infor;
                     foreach (string currentSelect in inforGame)
                         if (numGame == 0)
                             //Console.WriteLine(select);
-                            infor = currentSelect;
+                             
 
                     break;
                 case "2":

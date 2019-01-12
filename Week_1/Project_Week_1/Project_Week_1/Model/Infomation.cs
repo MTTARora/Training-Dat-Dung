@@ -15,6 +15,7 @@ namespace Project_Week_1.Model
             {
                 case "1":
                     display.inforUser(user);
+                    goto dangnhap;
                     break;
                 case "2":
                     string[] games = System.IO.File.ReadAllLines("D:\\Data\\SourceTree\\Train\\Week_1\\Project_Week_1\\Project_Week_1\\DB\\GameList.txt");
